@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import Menu from './Menu';
+import { MOBILE_MAX } from './breakpoints';
 
 const Toolbar = styled(Menu).attrs({
   justifyContent: 'space-evenly',
   secondary: true,
 })`
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: ${MOBILE_MAX}) {
     bottom: 0;
     position: fixed;
     width: 100%;

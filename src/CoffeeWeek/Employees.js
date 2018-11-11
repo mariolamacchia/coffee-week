@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Grid from '../UIComponents/Grid';
-import Card from '../UIComponents/Card';
 import {
   getError, isLoading, getRandomEmployeesPairs, fetchEmployees,
 } from './CoffeeWeekRedux';

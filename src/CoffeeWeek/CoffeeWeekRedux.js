@@ -47,7 +47,7 @@ export function fetchEmployees() {
     dispatch(fetchEmployeesRequest());
     fetchEmployeesApi()
       .then(employees => dispatch(fetchEmployeesSuccess(employees)))
-      .catch(error => dispatch(fetchEmployeesFail(error)));
+      .catch(error => dispatch(fetchEmployeesFail(error.message)));
   };
 }
 
