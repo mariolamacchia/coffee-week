@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Menu from './Menu';
-import H1 from './Typography/H1';
+import Menu from '../UIComponents/Menu';
+import H1 from '../UIComponents/Typography/H1';
 
 const Logo = styled.img`
   height: 50px;

@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 import Menu from './Menu';
 
-const Toolbar = styled(Menu).attrs({ secondary: true })`
+const Toolbar = styled(Menu).attrs({
+  justifyContent: 'space-evenly',
+  secondary: true,
+})`
   @media screen and (max-width: 767px) {
     bottom: 0;
     position: fixed;
     width: 100%;
     box-sizing: border-box;
-    justify-content: space-evenly;
   }
 `;
 

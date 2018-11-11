@@ -1,17 +1,13 @@
 import React from 'react';
 import Layout from './UIComponents/Layout';
-import Header from './UIComponents/Header';
-import Toolbar from './UIComponents/Toolbar';
+import Header from './Core/Header';
+import Navigation from './Core/Navigation';
 
 export default function App() {
   return (
     <Layout>
       <Header />
-      <Toolbar>
-        <Toolbar.Button>Button 1</Toolbar.Button>
-        <Toolbar.Button>Button 2</Toolbar.Button>
-        <Toolbar.Button>Button 3</Toolbar.Button>
-      </Toolbar>
+      <Navigation />
     </Layout>
   );
 }
