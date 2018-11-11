@@ -27,7 +27,7 @@ export const reducer = handleActions({
   }),
   [FETCH_EMPLOYEES_SUCCESS]: (state, { payload }) => state.merge({
     error: null,
-    employees: payload,
+    employees: List(payload.data.users),
     loading: false,
   }),
   [FETCH_EMPLOYEES_FAIL]: (state, { payload }) => state.merge({
