@@ -1,13 +1,12 @@
 import React from 'react';
-import Layout from './UIComponents/Layout';
-import Header from './Core/Header';
-import Navigation from './Core/Navigation';
+import { Provider } from 'react-redux';
+import Homepage from './Core/Homepage';
+import store from './store';
 
 export default function App() {
   return (
-    <Layout>
-      <Header />
-      <Navigation />
-    </Layout>
+    <Provider store={store}>
+      <Homepage />
+    </Provider>
   );
 }

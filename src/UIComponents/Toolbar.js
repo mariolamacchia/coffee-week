@@ -17,6 +17,7 @@ Toolbar.Button = styled.button`
   background: transparent;
   border: 0;
   padding: 10px 20px;
+  cursor: pointer;
   font-size: 16px;
   margin-top: -10px;
   margin-bottom: -10px;

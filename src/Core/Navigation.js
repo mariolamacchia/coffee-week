@@ -1,12 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShareAlt, faRandom } from '@fortawesome/free-solid-svg-icons';
 import Toolbar from '../UIComponents/Toolbar';
+import { shuffleEmployees } from '../CoffeeWeek/CoffeeWeekRedux';
 
-export default function Navigation() {
+function Navigation({ shuffleEmployees }) {
   return (
     <Toolbar>
-      <Toolbar.Button>
+      <Toolbar.Button onClick={shuffleEmployees}>
         <FontAwesomeIcon icon={faRandom} />
         {' '}
         Re-shuffle
@@ -24,3 +27,9 @@ export default function Navigation() {
     </Toolbar>
   );
 }
+
+Navigation.propTypes = {
+  shuffleEmployees: PropTypes.func.isRequired,
+};
+
+export default connect(null, { shuffleEmployees })(Navigation);
