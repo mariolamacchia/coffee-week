@@ -2,6 +2,7 @@ import { List, Record } from 'immutable';
 import { createAction, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
 import { fetchEmployees as fetchEmployeesApi } from './EmployeesApi';
+import { getPairsByLocation } from './CoffeeWeekUtils';
 
 // Action names
 export const NAMESPACE = 'CoffeeWeek';
@@ -58,14 +59,5 @@ const getEmployees = createSelector(getState, state => List(state.employees));
 export const getError = createSelector(getState, state => state.error);
 export const isLoading = createSelector(getState, state => state.loading);
 export const getRandomEmployeesPairs = createSelector(
-  getEmployees, getShuffleCount, (employees) => {
-    // shuffle employee list
-    const shuffledList = employees.sortBy(Math.random);
-
-    return shuffledList
-      // get pairs of employees
-      .map((employee, index) => ([employee, shuffledList.get((index + 1) % shuffledList.size)]))
-      // order pairs alphabetically
-      .sort(([employee]) => employee);
-  },
+  getEmployees, getShuffleCount, employees => getPairsByLocation(employees),
 );
