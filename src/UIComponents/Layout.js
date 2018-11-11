@@ -1,18 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { MOBILE_MAX } from './breakpoints';
 
-export default function Layout({ children }) {
-  return (
-    <div>
-      {children}
-    </div>
-  );
-}
-
-Layout.propTypes = {
-  children: PropTypes.node,
-};
-
-Layout.defaultProps = {
-  children: null,
-};
+export default styled.div`
+  @media screen and (max-width: ${MOBILE_MAX}) {
+    padding-bottom: 40px;
+  }
+`;
