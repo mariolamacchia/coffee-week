@@ -42,6 +42,7 @@ export const reducer = handleActions({
 const fetchEmployeesRequest = createAction(FETCH_EMPLOYEES_REQUEST);
 const fetchEmployeesSuccess = createAction(FETCH_EMPLOYEES_SUCCESS);
 const fetchEmployeesFail = createAction(FETCH_EMPLOYEES_FAIL);
+// shuffleEmployees un-validates re-select cache and force re-evaluating pairs
 export const shuffleEmployees = createAction(SHUFFLE);
 export function fetchEmployees() {
   return (dispatch) => {

@@ -24,5 +24,6 @@ export function getPairsByLocation(employees) {
   return employeesByLocation
     .map(getPairs)
     .reduce((mergedArray, pairs) => (mergedArray.concat(pairs)), List())
+    // Sort alphabetically on first employee of each pair
     .sortBy(([employee]) => employee.name.first);
 }
